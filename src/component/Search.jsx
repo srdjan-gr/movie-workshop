@@ -10,13 +10,12 @@ const Search = () => {
     // UseEffect Ucitava API podatke kad god se promeni search string
     useEffect(() => {
         getData();
-        // console.log(film);
+        console.log(film);
     }, [searchString]);
 
     // API Poziv
     const getData = () => {
         if (searchString !== '') {
-
             fetch(`http://www.omdbapi.com/?apikey=b1c7adef&s=${searchString}&page=${strana}`)
                 .then((res) => res.json())
                 .then((data) => {
@@ -45,14 +44,13 @@ const Search = () => {
             </form>
 
 
-            <div className="d-flex flex-wrap justify-content-center gap-4 pt-3 pb-5">
+            <div className="d-flex flex-wrap justify-content-center gap-4 pt-3 pb-5 mb-4">
 
                 {
                     film.map((element, idx) => {
-
                         return (
 
-                            <div className="card text-bg-dark custopOpacity sirinaKartice"  >
+                            <div className="card text-bg-dark custopOpacity sirinaKartice" key={idx}>
                                 <img src={element.Poster} className="card-img-top imgHeight" alt="..." />
                                 <div className="card-body py-2">
                                     <h5 className="card-title m-0 ">{element.Title}</h5>
@@ -66,12 +64,8 @@ const Search = () => {
                                     <button className='btn btn-outline-success btn-sm'>Add to list</button>
                                 </div>
                             </div>
-
-
-
-
-
                         )
+
                     })
                 }
             </div>
