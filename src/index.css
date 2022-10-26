@@ -17,3 +17,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.background {
+  min-height: 100vh;
+  background-image: url('../public/noom-peerapong-2uwFEAGUm6E-unsplash.jpg'), linear-gradient(0deg, #2b5d7e 10%, #416c94cb 60%);
+  background-blend-mode: overlay;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.custopOpacity {
+  opacity: .95;
+}
+
+.sirinaKartice {
+  max-width: 19rem;
+}
+
+.imgHeight {
+  height: 24rem
+}
